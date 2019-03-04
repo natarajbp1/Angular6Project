@@ -1,0 +1,16 @@
+table {
+    color: #560;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #560;
+    padding: 10px;
+}
+
+th {
+    border: 1px solid #560;
+    padding: 10px;
+}
