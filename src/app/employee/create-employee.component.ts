@@ -7,6 +7,7 @@ import { EmployeeService } from './employee.service';
 import { ISkill } from './ISkill';
 import { IEmployee } from './IEmployee';
 import { Router } from '@angular/router';
+// This file creates a new employee
  
 @Component({
   selector: 'app-create-employee',
@@ -16,6 +17,8 @@ import { Router } from '@angular/router';
 export class CreateEmployeeComponent implements OnInit {
   employeeForm: FormGroup;
   employee: IEmployee;
+  empId: number;
+  pageTitle: string;
 
   validationMessages = {
     'fullName': {
@@ -71,9 +74,20 @@ export class CreateEmployeeComponent implements OnInit {
     });
 
   this.route.paramMap.subscribe(params => {
-    const empId = +params.get('id');
-    if (empId) {
-      this.getEmployee(empId);
+    this.empId = +params.get('id');
+    if (this.empId) {
+      this.pageTitle = 'Edit Employee';
+      this.getEmployee(this.empId);
+    } else {
+      this.pageTitle= 'Create Employee';
+      this.employee = {
+        id: null,
+        fullName: '',
+        contactPreference: '',
+        email: '',
+        phone: null,
+        skills: []
+      };
     }
   });
 }
@@ -179,10 +193,24 @@ export class CreateEmployeeComponent implements OnInit {
   console.log(formArray1);
   console.log(FormGroup);
   }
-onSubmit(): void {
+
+onSubmit() {
   this.MapFormValuesToEmployeeModel();
+  if(this.employee.id) {
   this.employeeService.updateEmployee(this.employee).subscribe(
     () => this.router.navigate(['list']),
+    (err: any) => console.log(err)
+  );
+  } else {
+    this.employeeService.addEmployee(this.employee).subscribe(
+      () => this.router.navigate(['list']),
+      (err: any) => console.log(err)
+    );
+  }
+  }
+  onDeleteClick() {
+    this.employeeService.deleteEmployee(this.employee.id).subscribe(
+      () => this.router.navigate(['list']),
     (err: any) => console.log(err)
   );
   }

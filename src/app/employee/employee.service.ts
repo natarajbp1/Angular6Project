@@ -30,26 +30,30 @@ export class EmployeeService {
       .pipe(catchError(this.handleError));
 }
 
-//{addEmployee(employee: IEmployee): Observable<IEmployee> { 
-//   return this.httpClient.post<IEmployee>(this.baseUrl, employee)
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json'
-//     })
-//   })
-//   .pipe(catchError(this.handleError));
-// }
+addEmployee(employee: IEmployee): Observable<IEmployee> { 
+  console.log(employee);
+  return this.httpClient.post<IEmployee>(this.baseUrl, employee, {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  })
+  .pipe(catchError(this.handleError));
+}
 
-// updateEmployee(employee: IEmployee): Observable<void> {
-//   return this.httpClent.put<void>(${this.baseUrl}/$employee)
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json'
-//     })
-//   })
-//       .pipe(catchError(this.handleError));
-// }    
+updateEmployee(employee: IEmployee): Observable<void> {
+  console.log(employee);
+  return this.httpClient.put<void>(`${this.baseUrl}/${employee.id}`, employee, {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  })
 
-// deleteEmployee(id: number): Observable<void> {
-//   return this.httpClient.delete<void>(${this.baseUrl}/${id:})
-//     .pipe(catchError(this.handleError));
-//   }
+      .pipe(catchError(this.handleError));
+}    
+
+deleteEmployee(id: number): Observable<void> {
+  console.log(id);
+  return this.httpClient.delete<void>(`${this.baseUrl}/${id}`)
+    .pipe(catchError(this.handleError));
+  }
 }

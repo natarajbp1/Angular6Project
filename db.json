@@ -1,47 +1,74 @@
 {
-    "employees": [
+  "employees": [
+    {
+      "id": 3,
+      "fullName": "David",
+      "contactPreference": "email",
+      "email": "a@dell.com",
+      "phone": "9860278310",
+      "skills": [
         {
-            "id": 1,
-            "fullName": "Mark",
-            "contactPreference": "email",
-            "email": "mark@gmail.com",
-            "phone": "9876543210",
-            "skills": [
-                {
-                    "skillName": "C#",
-                    "experienceInYears": 1,
-                    "proficiency": "Beginner"
-                },
-                {
-                    "skillName": "Java",
-                    "experienceInYears": 2,
-                    "proficiency": "intermediate"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "fullName": "John",
-            "contactPreference": "phone",
-            "email": "john@gmail.com",
-            "phone": "0987654321",
-            "skills": [
-                {
-                    "skillName": "Angular",
-                    "experienceInYears": 2,
-                    "proficiency": "Beginner"
-                },
-                {
-                    "skillName": "HTML",
-                    "experienceInYears": 2,
-                    "proficiency": "intermediate"
-                },
-                {
-                    "skillName": "LINQ",
-                    "experienceInYears": 3,
-                    "proficiency": "advanced"
-                }
-            ]  
+          "skillName": "C",
+          "experienceInYears": "3",
+          "proficiency": "beginner"
         }
-    ]
+      ]
+    },
+    {
+      "id": 4,
+      "fullName": "David",
+      "contactPreference": "email",
+      "email": "a@dell.com",
+      "phone": "9860278310",
+      "skills": [
+        {
+          "skillName": "C",
+          "experienceInYears": "3",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullName": "pradnya",
+      "contactPreference": "email",
+      "email": "b@dell.com",
+      "phone": "98765432101",
+      "skills": [
+        {
+          "skillName": "C++",
+          "experienceInYears": "4",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fullName": "pradnya",
+      "contactPreference": "email",
+      "email": "b@dell.com",
+      "phone": "98765432101",
+      "skills": [
+        {
+          "skillName": "C++",
+          "experienceInYears": "4",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fullName": "pvv",
+      "contactPreference": "phone",
+      "email": "abcd@dell.com",
+      "phone": "2394237",
+      "skills": [
+        {
+          "skillName": "C",
+          "experienceInYears": "5",
+          "proficiency": "advanced"
+        }
+      ]
+    }
+  ]
 }
